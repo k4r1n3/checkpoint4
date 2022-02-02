@@ -35,7 +35,7 @@ class Project
     private $imageUrl;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="name")
+     * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="project")
      */
     private $tags;
 
@@ -97,7 +97,7 @@ class Project
     {
         if (!$this->tags->contains($tag)) {
             $this->tags[] = $tag;
-            $tag->addName($this);
+            $tag->addProject($this);
         }
 
         return $this;
@@ -106,9 +106,10 @@ class Project
     public function removeTag(Tags $tag): self
     {
         if ($this->tags->removeElement($tag)) {
-            $tag->removeName($this);
+            $tag->removeProject($this);
         }
 
         return $this;
     }
+
 }
