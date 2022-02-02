@@ -35,7 +35,7 @@ class Project
     private $imageUrl;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="project")
+     * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="project",)
      */
     private $tags;
 

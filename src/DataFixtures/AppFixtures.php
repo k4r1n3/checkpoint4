@@ -21,10 +21,10 @@ class AppFixtures extends Fixture
         $admin = new User;
         $admin->setFirstname('Karine');
         $admin->setEmail('k.challier@yahoo.fr');
-        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->addRole('ROLE_ADMIN');
         $hashedPassword = $this->passwordHasher->hashPassword(
             $admin,
-            'p@sS#6996'
+            'aaaaaa'
         );
         $admin->setPassword($hashedPassword);
         $manager->persist($admin);
