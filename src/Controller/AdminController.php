@@ -36,7 +36,6 @@ class AdminController extends AbstractController
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getManager();
             $entityManager->persist($project);
             $entityManager->flush();
             $this->addFlash('success', 'Le projet a bien été ajouté');
