@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Project;
 use phpDocumentor\Reflection\DocBlock\Description;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -23,7 +24,6 @@ class ProjectType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
-        ]);
+            'data_class' => Project::class]);
     }
 }
