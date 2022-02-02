@@ -6,3 +6,4 @@ $custom-colors: (
         "white": #EBEBEB,
         "grey": #5d5d5d,
 );
+$theme-colors: map-merge($theme-colors, $custom-colors);

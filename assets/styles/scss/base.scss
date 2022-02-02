@@ -1,3 +1,18 @@
-.bg-dark {
-  background-color: $dark;
+body {
+  font-family: Roboto, sans-serif;
+  color: $dark;
 }
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ul {
+  list-style: none;
+}
+
+
