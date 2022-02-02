@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Project;
 use App\Form\ProjectType;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,9 +19,13 @@ class AdminController extends AbstractController
     /**
      * @Route("/dashboard", name="dashboard")
      */
-    public function showAdminIndex(): Response
+    public function index(ManagerRegistry $managerRegistry): Response
     {
-        return $this->render('admin/index.html.twig');
+        $projects = $managerRegistry->getRepository(Project::class)->findAll();
+
+        return $this->render('admin/dashboard.html.twig', [
+            'projects' => $projects,
+            ]);
     }
 
     /**

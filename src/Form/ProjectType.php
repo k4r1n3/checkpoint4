@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ProjectType extends AbstractType
 {
@@ -18,7 +19,13 @@ class ProjectType extends AbstractType
         $builder
             ->add('title', TextType::class, ['label' => 'Titre du projet'])
             ->add('description', TextType::class, ['label' => 'Description brève du projet'])
-            ->add('imageUrl', FileType::class, ['label' => 'Ajouter une photo']);
+            ->add('imageUrl', TextType::class, ['label' => 'Ajouter une photo'])
+            ->add('documentFile', VichFileType::class, [
+                'attr' => [
+                    'required' => true,
+                ],
+                'label' => false,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
