@@ -30,6 +30,7 @@ class ProjectType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
             ])
+            ->add('imageUrl', TextType::class, ['label' => 'Ajouter une photo'])
             ->add('documentFile', VichFileType::class, [
                 'attr' => [
                     'required' => true,
