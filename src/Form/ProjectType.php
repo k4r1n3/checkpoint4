@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use App\Entity\Tags;
 use phpDocumentor\Reflection\DocBlock\Description;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -24,8 +25,8 @@ class ProjectType extends AbstractType
             ->add('description', TextType::class, ['label' => 'Description brève du projet'])
             ->add('tags', EntityType::class, [
                 'label'    => 'Sélectionner des tags',
-                'class'    => Project::class,
-                'choice_label' => 'tags',
+                'class'    => Tags::class,
+                'choice_label' => 'name',
                 'expanded' => true,
                 'multiple' => true,
             ])

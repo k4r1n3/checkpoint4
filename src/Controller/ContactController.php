@@ -28,7 +28,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request, EntityManagerInterface $em): Response
+    public function contact(Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
         $mailContact = new Contact();
         $form = $this->createForm(ContactType::class, $mailContact);
