@@ -28,7 +28,7 @@
 
                         <p>Développé en :
                             {% for tag in project.tags %}
-                                <span class="card-text">{{ tag.name }} </span>
+                                <span class="card-text fw-light">{{ tag.name }} </span>
                             {% endfor %}
                         </p>
                         <a href="{{asset (vich_uploader_asset(project)) }}" class="btn btn-outline-dark"><i class="fas fa-eye doc-show"></i></a>

@@ -46,7 +46,7 @@ class AdminController extends AbstractController
             $manager->persist($project);
             $manager->flush();
             $this->addFlash('success', 'Le projet a bien été ajouté');
-            return $this->redirectToRoute('project');
+            return $this->redirectToRoute('admin_dashboard');
         }
         return $this->render('admin/add_project.html.twig', [
             'form'    => $form->createView(),
