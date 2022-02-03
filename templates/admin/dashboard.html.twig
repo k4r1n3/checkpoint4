@@ -15,14 +15,15 @@
     <div class="d-flex justify-content-center p-2">
         <h1 class="col-10 col-sm-6 justify-content-center text-dark border-bottom border-dark text-center p-2 m-3 fw-bold">Mes projets</h1>
     </div>
-    <div class="container"></div>
+    <div class="container">
         <div class="px-3 d-flex justify-content-center">
             {% for project in projects %}
-                <div class="card col-3 p-3 text-dark ">
+                <div class="card p-3 text-dark ">
                     <img src="{{asset (vich_uploader_asset(project)) }}" class="card-img-top" alt="{{ project.title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text">{{ project.description }}</p>
+                        <p>{{ project.tags.name }} </p>
                         <a href="{{asset (vich_uploader_asset(project)) }}" class="btn btn-outline-dark"><i class="fas fa-eye doc-show"></i></a>
                     </div>
                 </div>
