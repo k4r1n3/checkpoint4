@@ -33,21 +33,21 @@ class AdminController extends AbstractController
      */
     public function createProject(
         Request $request,
-        EntityManagerInterface $entityManager
+        ManagerRegistry $managerRegistry
     ): Response
     {
+        $manager = $managerRegistry->getManager();
         $project = new Project();
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($project);
-            $entityManager->flush();
+            $manager->persist($project);
+            $manager->flush();
             $this->addFlash('success', 'Le projet a bien été ajouté');
-            return $this->redirectToRoute('admin_dashboard');
+            return $this->redirectToRoute('project');
         }
         return $this->render('admin/add_project.html.twig', [
             'form'    => $form->createView(),
-            'project' => $project,
         ]);
     }
 
