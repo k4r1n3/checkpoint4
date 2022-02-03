@@ -3,25 +3,19 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-end text-warning" id="navbarSupportedContent">
             <div class="navbar-nav">
                 <a class="navbar-brand"></a>
-                <ul class="navbar-nav mr-auto m-2 mt-lg-0">
-                    <li class="nav-item active ">
-                        <a class="nav-link text-ye">Réalisations</a>
+                <ul class="navbar-nav mr-auto mx-2">
+                    <li class="nav-item active mx-lg-4">
+                        <a class="nav-link text-warning" href="">Réalisations</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#portfolio">Portfolio</a>
+                    <li class="nav-item active mx-lg-4">
+                        <a class="nav-link text-warning" href="">Parcours</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link text-light">Contact</a>
+                    <li class="nav-item active mx-lg-4">
+                        <a class="nav-link text-warning border border-2 border-warning rounded" href="{{ path('contact') }}">Contact</a>
                     </li>
-                        {%  if (is_granted('ROLE_ADMIN')) %}
-                            <li class="nav-item active">
-                                <a class="nav-link text-light border border-2 text-uppercase" href="{{ path('#') }}">Admin</a>
-                            </li>
-                        {% endif %}
-
                 </ul>
             </div>
         </div>
@@ -29,9 +23,10 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="bg-green text-center py-2">
+        <div class="text-center py-2 bg-dark">
             <img src="{{ asset('build/images/memoji_1.png') }}" height="110px" alt="logo">
-            <p>Karine CHALLIER</p>
+            <p class="text-warning fs-1">Karine CHALLIER</p>
+            <p class="text-warning fs-5"><img src="{{ asset('build/images/fusee.png') }}" height="25px" alt="fullstack" class=" mx-2">Développeuse web fullstack</p>
         </div>
     </div>
 </div>

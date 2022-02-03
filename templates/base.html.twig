@@ -20,6 +20,15 @@
     </head>
     <body>
     {% include 'components/_navbar.html.twig' %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><i class="fas fa-check-circle"></i>&nbsp;
+                    <div class="alert-{{ label }}"></div>
+                    {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     {% block body %}{% endblock %}
     {% include 'components/_footer.html.twig' %}
     </body>

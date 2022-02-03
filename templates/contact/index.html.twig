@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Contact{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center my-3">
+        <h1 class="col-10 col-sm-6 justify-content-center my-3 text-dark border-bottom border-dark text-center p-2 m-3 fw-bold">Contactez-moi</h1>
+    </div>
+    <div class="justify-content-center col-10 mx-auto p-2 fw-bold text-dark">
+        {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.message) }}
+        <div class="d-flex justify-content-center my-3 p-2">
+            <button type="submit" class="btn btn-outline-dark rounded fw-bold fs-5">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

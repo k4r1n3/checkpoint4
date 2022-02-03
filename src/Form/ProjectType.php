@@ -4,13 +4,16 @@ namespace App\Form;
 
 use App\Entity\Project;
 use phpDocumentor\Reflection\DocBlock\Description;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use function Sodium\add;
 
 class ProjectType extends AbstractType
 {
@@ -19,6 +22,13 @@ class ProjectType extends AbstractType
         $builder
             ->add('title', TextType::class, ['label' => 'Titre du projet'])
             ->add('description', TextType::class, ['label' => 'Description brève du projet'])
+            ->add('tags', EntityType::class, [
+                'label'    => 'Sélectionner des tags',
+                'class'    => Project::class,
+                'choice_label' => 'tags',
+                'expanded' => true,
+                'multiple' => true,
+            ])
             ->add('imageUrl', TextType::class, ['label' => 'Ajouter une photo'])
             ->add('documentFile', VichFileType::class, [
                 'attr' => [
