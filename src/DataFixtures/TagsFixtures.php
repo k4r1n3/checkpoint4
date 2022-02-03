@@ -11,12 +11,13 @@ class TagsFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $tags = [
-            'All',
             'HTML',
             'Bootstrap',
             'CSS',
             'PHP',
             'Symfony',
+            'Twig',
+            'JS',
         ];
         foreach ($tags as $value) {
             $tag = new Tags();

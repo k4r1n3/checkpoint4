@@ -31,12 +31,12 @@ class ProjectType extends AbstractType
                 'multiple'      => true,
                 'by_reference'  => false,
             ])
-            ->add('documentFile', VichFileType::class, [
-                'attr' => [
-                    'required' => true,
-                ],
-                'label' => false,
-            ]);
+             ->add('documentFile', VichFileType::class, [
+                 'attr' => [
+                     'required' => true,
+                 ],
+                 'label' => false,
+             ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
