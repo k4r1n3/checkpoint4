@@ -1,6 +1,7 @@
 body {
   font-family: Roboto, sans-serif;
   color: $dark;
+  background-color: $dark;
 }
 
 h1, h2, h3 {
@@ -11,8 +12,5 @@ a {
   text-decoration: none;
 }
 
-li, ul {
-  list-style: none;
-}
 
 
