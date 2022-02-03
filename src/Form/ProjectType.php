@@ -22,14 +22,14 @@ class ProjectType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, ['label' => 'Titre du projet'])
-            ->add('description', TextType::class, ['label' => 'Description brève du projet'])
+            ->add('description', TextType::class, ['label' => 'Description'])
             ->add('tags', EntityType::class, [
-                'label'    => 'Sélectionner des tags',
-                'class'    => Tags::class,
-                'choice_label' => 'name',
-                'expanded' => true,
-                'multiple' => true,
-                'by_reference' => false,
+                'label'         => 'Sélectionner des tags',
+                'class'         => Tags::class,
+                'choice_label'  => 'name',
+                'expanded'      => true,
+                'multiple'      => true,
+                'by_reference'  => false,
             ])
             ->add('documentFile', VichFileType::class, [
                 'attr' => [
