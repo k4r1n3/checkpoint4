@@ -3,12 +3,17 @@
 {% block title %}Administration - Mes projets{% endblock %}
 
 {% block body %}
-    <div class="d-flex justify-content-center my-3">
-        <h1 class="col-10 col-sm-6 justify-content-center my-3 text-dark border-bottom border-dark text-center p-2 m-3 fw-bold">Mes projets</h1>
+    <div class="container p-3">
+        <div class="d-flex justify-content-end">
+           <p class="btn btn-warning">
+             <a href="{{ path('admin_add_project') }}" class="fw-bold text-dark">
+                 <i class="fas fa-plus mx-2"></i>Ajouter un projet
+             </a>
+           </p>
+        </div>
     </div>
-    <div>
-        <a href="{{ path('') }}"></a>
-        Ajouter un projet
+    <div class="d-flex justify-content-center p-2">
+        <h1 class="col-10 col-sm-6 justify-content-center text-dark border-bottom border-dark text-center p-2 m-3 fw-bold">Mes projets</h1>
     </div>
     <div class="container"></div>
         <div class="px-3 d-flex justify-content-center">
