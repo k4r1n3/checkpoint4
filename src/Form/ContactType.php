@@ -20,15 +20,24 @@ class ContactType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom',
+                'attr' => [
+                    'class' => 'p-2'
+                ],
             ])
             ->add('email', TextType::class, [
                 'label' => 'Email',
+                'attr' => [
+                    'class' => 'p-2'
+                ],
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 3)))
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Message',
+                'attr' => [
+                    'class' => 'p-2'
+                ],
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 3)),
