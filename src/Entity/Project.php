@@ -33,10 +33,6 @@ class Project
      */
     private $description;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $imageUrl;
 
     /**
      * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="project",)

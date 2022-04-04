@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,21 +23,21 @@ class ProjectType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, ['label' => 'Titre du projet'])
-            ->add('description', TextType::class, ['label' => 'Description brève du projet'])
+            ->add('description', TextareaType::class, ['label' => 'Description'])
             ->add('tags', EntityType::class, [
-                'label'    => 'Sélectionner des tags',
-                'class'    => Tags::class,
-                'choice_label' => 'name',
-                'expanded' => true,
-                'multiple' => true,
+                'label'         => 'Sélectionner des tags',
+                'class'         => Tags::class,
+                'choice_label'  => 'name',
+                'expanded'      => true,
+                'multiple'      => true,
+                'by_reference'  => false,
             ])
-            ->add('imageUrl', TextType::class, ['label' => 'Ajouter une photo'])
-            ->add('documentFile', VichFileType::class, [
-                'attr' => [
-                    'required' => true,
-                ],
-                'label' => false,
-            ]);
+             ->add('documentFile', VichFileType::class, [
+                 'attr' => [
+                     'required' => true,
+                 ],
+                 'label' => false,
+             ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

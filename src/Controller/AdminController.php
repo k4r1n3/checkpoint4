@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Project;
 use App\Form\ProjectType;
+use App\Repository\ProjectRepository;
+use App\Repository\TagsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,11 +46,12 @@ class AdminController extends AbstractController
             $manager->persist($project);
             $manager->flush();
             $this->addFlash('success', 'Le projet a bien été ajouté');
-            return $this->redirectToRoute('project');
+            return $this->redirectToRoute('admin_dashboard');
         }
         return $this->render('admin/add_project.html.twig', [
             'form'    => $form->createView(),
         ]);
     }
+
 
 }
