@@ -34,7 +34,7 @@ class ProjectController extends AbstractController
         Request $request
     ): Response
     {
-        $findByTag = $managerRegistry->getRepository(Tags::class)->findOneBy([]);
+        $tags = $managerRegistry->getRepository(Tags::class)->findOneBy([]);
         return $this->render('project/index.html.twig', [
             'findByTag' => $findByTag,
         ]);
