@@ -31,7 +31,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/add_project", name="add_project")
+     * @Route("/add-project", name="add_project")
      */
     public function createProject(
         Request $request,
@@ -48,7 +48,7 @@ class AdminController extends AbstractController
             $this->addFlash('success', 'Le projet a bien été ajouté');
             return $this->redirectToRoute('admin_dashboard');
         }
-        return $this->render('admin/add_project.html.twig', [
+        return $this->render('admin/add-project.html.twig', [
             'form'    => $form->createView(),
         ]);
     }
