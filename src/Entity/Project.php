@@ -60,6 +60,12 @@ class Project
      */
     private $documentSize;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     */
+    private $url;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -176,5 +182,17 @@ class Project
     public function getDocumentSize(): ?int
     {
         return $this->documentSize;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
     }
 }
