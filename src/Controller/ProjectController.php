@@ -25,19 +25,4 @@ class ProjectController extends AbstractController
             'projects' => $projects,
         ]);
     }
-
-    /**
-     * @Route("{tag}", name="tag_")
-     */
-    public function findByTag(
-        ManagerRegistry $managerRegistry,
-        Request $request
-    ): Response
-    {
-        $tags = $managerRegistry->getRepository(Tags::class)->findOneBy([]);
-        return $this->render('project/index.html.twig', [
-            'findByTag' => $findByTag,
-        ]);
-    }
-
 }

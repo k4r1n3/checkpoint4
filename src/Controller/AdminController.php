@@ -31,7 +31,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/add_project", name="add_project")
+     * @Route("/add-project", name="add_project")
      */
     public function createProject(
         Request $request,

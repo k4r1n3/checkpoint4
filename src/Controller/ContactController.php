@@ -41,7 +41,7 @@ class ContactController extends AbstractController
             $manager->flush();
             $email = (new Email())
                 ->from($email->getEmail())
-                ->to('k.challier@yahoo.fr')
+                ->to('amnesiiac.7@gmail.com')
                 ->subject('Demande de contact : ' . $email->getName())
                 ->text($email->getMessage());
             $mailer->send($email);
