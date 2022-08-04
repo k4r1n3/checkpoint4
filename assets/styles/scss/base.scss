@@ -4,8 +4,16 @@ body {
   background-color: #212529;
 }
 
-h1, h2, h3 {
+h1 {
   font-family: Roboto, sans-serif;
+  color: #212529;
+  font-size: 20px;
+}
+
+h2, h3 {
+  font-family: Roboto, sans-serif;
+  color: #212529;
+  font-size: 15px;
 }
 
 a {
